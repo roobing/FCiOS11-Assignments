@@ -4,7 +4,38 @@
 
    // 입력 예시 및 결과
 
-   combineString1(str1: "AB", str2: "CD", str3: "EF")   // "ABCDEF" combineString1(str1: "AB", str2: nil, str3: "EF")    // "ABEF" 
+   combineString1(str1: "AB", str2: "CD", str3: "EF")   // "ABCDEF"
+
+   combineString1(str1: "AB", str2: nil, str3: "EF")    // "ABEF" 
+
+   ```swift
+   func sumOpt(opt1: String?, opt2: String?, opt3: String!) -> String {
+       var newArry: String = ""
+       
+       // 강제 해제
+       if opt1 != nil {
+           newArry = newArry + opt1!
+       }
+       else {
+           return "opt1 is nil!!"
+       }
+   
+       
+       // 옵셔널 바인딩
+       if let opt2 = opt2 {
+           newArry = newArry + opt2
+       }
+       
+       // 묵시적 해제
+       newArry = newArry + opt3
+       
+       return newArry
+   }
+   var optA: String? = "D"
+   var optB: String? = "O"
+   var optC: String! = "G"
+   sumOpt(opt1: optA, opt2: optB, opt3: optC)
+   ```
 
    
 
@@ -12,6 +43,30 @@
 
    enum Arithmetic {  case addition, subtraction, multiplication, division }
 
+   ```swift
+   enum Arithmatic {
+       case PLUS, MINUS, DIVIDE, MULTIPLE
+       
+   }
+   var calcMethod = Arithmatic.PLUS
+   
+   func Calc(method: Arithmatic, num1: Int, num2: Int) -> Int {
+       
+       switch method {
+       case .PLUS:
+           return num1 + num2
+       case .MINUS:
+           return num1 - num2
+       case .MULTIPLE:
+           return num1 * num2
+       case .DIVIDE:
+           return num1 / num2
+       }
+   }
+   
+   Calc(method: .DIVIDE, num1: 10, num2: 5)
+   ```
+   
    
 
 [ 도전 과제 ]
