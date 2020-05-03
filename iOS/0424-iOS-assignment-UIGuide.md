@@ -1,9 +1,26 @@
 ### 과제 - 알고리즘
 
 1. 입력받은 숫자의 모든 자리 숫자 합계를 출력하기      
-e.g.  123 -> 6 ,  5678 -> 26
+  e.g.  123 -> 6 ,  5678 -> 26
 
+  ```swift
+  func eachSum(num: Int) -> Int {
+      var rest: Int = 0
+      var quotient: Int = num
+      var eachSum: Int = 0
+      
+      repeat {
+          rest = quotient % 10
+          quotient = quotient / 10
+          eachSum = rest + eachSum
+      } while quotient >= 10
+      return eachSum + quotient
+      
+  }
+  eachSum(num: 5678) // 26
+  ```
 
+  
 
 2. 하샤드 수 구하기 
 
