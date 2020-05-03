@@ -26,6 +26,32 @@
 
 * 하샤드 수 : 자연수 N의 각 자릿수 숫자의 합을 구한 뒤, 그 합한 숫자로 자기 자신이 나누어 떨어지는 수
   e.g. 18의 자릿수 합은 1 + 8 = 9 이고, 18은 9로 나누어 떨어지므로 하샤드 수.
+  
+  ```swift
+  func hashadNum(num: Int) {
+      var rest: Int = 0
+      var quotient: Int = num
+      var eachSum: Int  = 0
+      
+      repeat {
+          rest = quotient % 10
+          quotient = quotient / 10
+          eachSum = rest + eachSum
+      } while quotient >= 10
+      eachSum = eachSum + quotient
+      print(eachSum)
+      
+      if num % eachSum == 0 {
+          print("hashad")
+      }
+      else {
+          print("no hashad")
+      }
+  }
+  hashadNum(num: 18) // 9, hashad
+  ```
+  
+  
 
 
 
