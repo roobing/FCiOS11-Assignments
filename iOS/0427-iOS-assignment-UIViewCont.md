@@ -13,7 +13,9 @@ C는 A 또는 B로 돌아가는 dismiss 버튼
 
 [![UIViewCont](https://i9.ytimg.com/vi/RvEl7DvExIY/mq1.jpg?sqp=CILSxfUF&rs=AOn4CLDXlOkr7Ii9a2j4iP6avw77wE2NJg)](https://youtu.be/RvEl7DvExIY)
 
-
+<video controls width="300">
+<source src="iOS-assignment-Images/0427-iOS-assignment-UIViewCont.mov" type="video/mp4">
+</video>
 
 #### 주요내용
 
