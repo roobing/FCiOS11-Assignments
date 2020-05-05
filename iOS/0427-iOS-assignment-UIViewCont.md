@@ -11,6 +11,8 @@ C는 A 또는 B로 돌아가는 dismiss 버튼
 #### 결과
 <iframe width="806" height="473" src="https://www.youtube.com/embed/RvEl7DvExIY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
+[![UIViewCont](https://i9.ytimg.com/vi/RvEl7DvExIY/mq1.jpg?sqp=CILSxfUF&rs=AOn4CLDXlOkr7Ii9a2j4iP6avw77wE2NJg)](https://youtu.be/RvEl7DvExIY)
+
 
 
 #### 주요내용
