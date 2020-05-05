@@ -8,13 +8,50 @@ B는 A로 돌아가는 dismiss 버튼과 C로 가는 버튼
 
 C는 A 또는 B로 돌아가는 dismiss 버튼
 
-(참고) A -> B 
+#### 결과
+<iframe width="806" height="473" src="https://www.youtube.com/embed/RvEl7DvExIY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-​			<- B -> C 
 
-​				B <- C
 
-​		 A     <-    C
+#### 주요내용
+
+##### 1. 스토리보드로 생성한 View Controller 소스코드에서 참조하는 방법
+
+```swift
+ @IBAction func goToBButton(_ sender: UIButton) {
+     let mainStoryboard = UIStoryboard.init(name: "Main", bundle: nil)
+     
+     let vcB = mainStoryboard.instantiateViewController(identifier: "ViewControllerB")
+     vcB.modalPresentationStyle = .fullScreen
+     present(vcB, animated: true)
+ }
+```
+
+##### 2. presentingViewController에 실제로 포인터가 할당되는것 확인
+
+```swift
+    @objc func bButtonAction(_ sender: UIButton) {
+        if let vcB = self.presentingViewController {
+            print("ViewControllerC.presentingViewController is \(vcB)") // ViewControllerB에 대한 정보(포인터)가 출력됨.
+            vcB.dismiss(animated: true)
+        }
+        else {
+            print("no presentingViewController of B")
+        }
+    }
+    
+    @objc func aButtonAction(_ sender: UIButton) {
+        if let vcA = self.presentingViewController?.presentingViewController { // optional chain
+        print("ViewControllerC.presentingViewController?.presentingViewController is \(vcA)") // ViewControllerA에 대한 정보(포인터)가 출력됨.
+            vcA.dismiss(animated: true)
+        }
+        else {
+            print("no presentingViewController of A")
+        }
+    }
+```
+
+
 
 
 
