@@ -35,23 +35,19 @@ C는 A 또는 B로 돌아가는 dismiss 버튼
 
 ```swift
     @objc func bButtonAction(_ sender: UIButton) {
-        if let vcB = self.presentingViewController {
-            print("ViewControllerC.presentingViewController is \(vcB)") // ViewControllerB에 대한 정보(포인터)가 출력됨.
-            vcB.dismiss(animated: true)
+        guard let vcB = self.presentingViewController as? ViewControllerB else {
+            return
         }
-        else {
-            print("no presentingViewController of B")
-        }
+        print("ViewControllerC.presentingViewController is \(vcB)") // ViewControllerB에 대한 정보(포인터)가 출력됨.
+				//...
     }
     
     @objc func aButtonAction(_ sender: UIButton) {
-        if let vcA = self.presentingViewController?.presentingViewController { // optional chain
+        guard let vcA = self.presentingViewController?.presentingViewController as? ViewControllerA else {
+            return
+        }
         print("ViewControllerC.presentingViewController?.presentingViewController is \(vcA)") // ViewControllerA에 대한 정보(포인터)가 출력됨.
-            vcA.dismiss(animated: true)
-        }
-        else {
-            print("no presentingViewController of A")
-        }
+        //...
     }
 ```
 
@@ -65,11 +61,44 @@ ViewController 데이터 전달
 
 AViewController 와 BViewController 를 만든 뒤, 각각 하나씩의 Label 생성
 
-A에서 B로 화면을 넘어갈 때는 B의 Label 값이 이전 값에서 +3 증가
+A에서 B로 화면을 넘어갈 때는 B의 La bel 값이 이전 값에서 +3 증가
 
 B에서 A로 화면을 넘어갈 때는 A의 Label 값이 이전 값에서 +1 증가
 
 e.g. A에서 B로 갈 때 3, B에서 다시 A로 넘어올 때 4, 다시 A에서 B로 가면 7, 다시 A로 오면 8
+
+#### 결과
+
+<iframe width="806" height="473" src="https://www.youtube.com/embed/RvEl7DvExIY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+[![UIViewCont](https://i9.ytimg.com/vi/O16k9YVNnvY/mq1.jpg?sqp=CKiwyvUF&rs=AOn4CLDxKlLXssmw4s2ZiBDy5EnuMQu-xQ)](https://youtu.be/O16k9YVNnvY)
+
+#### 주요내용
+
+##### 1. 데이터 전달 하는 방법
+
+인스턴스 생성을 통해 상대방의 프로퍼티에 접근하여 값을 바꿔줌
+
+```swift
+// A->B
+@objc func goToBAction(_ sender: UIButton) {
+    let vcB: ViewControllerB = ViewControllerB() // 뷰 B의 인스턴스 생성
+    vcB.countFromA = countFromB + 3 // 뷰 B의 프로퍼티 countFromA로 값 전달
+    vcB.modalPresentationStyle = .fullScreen
+    present(vcB, animated: true)
+}
+
+// B->A
+@objc func goToAAction(_ sender: UIButton) {
+    guard let vcA = self.presentingViewController as? ViewControllerA else {
+        return
+    } // 뷰 A 객체를 읽어온 다음 ViewControllerA 타입으로 다운캐스팅
+    vcA.countFromB = countFromA + 1 // 뷰 A의 프로퍼티 countFromB로 값 전달
+    vcA.dismiss(animated: true)
+}
+```
+
+
 
 
 
