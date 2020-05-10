@@ -1,4 +1,4 @@
-### 문제
+### 과제 1번
 
 3개의 뷰 컨트롤러 사이에 화면 전환하기
 
@@ -9,13 +9,11 @@ B는 A로 돌아가는 dismiss 버튼과 C로 가는 버튼
 C는 A 또는 B로 돌아가는 dismiss 버튼
 
 #### 결과
-<iframe width="806" height="473" src="https://www.youtube.com/embed/RvEl7DvExIY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-[![UIViewCont](https://i9.ytimg.com/vi/RvEl7DvExIY/mq1.jpg?sqp=CILSxfUF&rs=AOn4CLDXlOkr7Ii9a2j4iP6avw77wE2NJg)](https://youtu.be/RvEl7DvExIY)
+<img src="iOS-assignment-Images/0427-iOS-assignment-UIViewCont.gif"/>
 
-<video controls width="300">
-<source src="iOS-assignment-Images/0427-iOS-assignment-UIViewCont.mov" type="video/mp4">
-</video>
+
+
 
 #### 주요내용
 
@@ -55,7 +53,7 @@ C는 A 또는 B로 돌아가는 dismiss 버튼
 
 
 
-### 과제
+### 과제 2번
 
 ViewController 데이터 전달
 
@@ -69,9 +67,9 @@ e.g. A에서 B로 갈 때 3, B에서 다시 A로 넘어올 때 4, 다시 A에서
 
 #### 결과
 
-<iframe width="806" height="473" src="https://www.youtube.com/embed/RvEl7DvExIY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<img src="iOS-assignment-Images/0427-iOS-assignment-UIViewCont-2.gif"/>
 
-[![UIViewCont](https://i9.ytimg.com/vi/O16k9YVNnvY/mq1.jpg?sqp=CKiwyvUF&rs=AOn4CLDxKlLXssmw4s2ZiBDy5EnuMQu-xQ)](https://youtu.be/O16k9YVNnvY)
+
 
 #### 주요내용
 
