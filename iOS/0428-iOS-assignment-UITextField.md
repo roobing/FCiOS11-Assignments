@@ -3,8 +3,10 @@
 텍스트 필드가 활성화 되어 있을 땐 Label 의 텍스트 색상이 파란색이고, Font 크기는 40
 텍스트 필드가 비활성화되면 Label 텍스트 색상이 빨간색이고, Font 크기는 20
 <br>
+
 ## 답안
 <img src="iOS-assignment-Images/0428-iOS-assignment-TextField.gif"/>
+
 ### 주요내용
 
 * 텍스트 필드 터치시 최초응답자 설정
@@ -34,6 +36,7 @@
 
 ## 답안
 <img src="iOS-assignment-Images/0428-iOS-assignment-TextField-2.gif"/>
+
 ### 주요내용
 * TextFieldDelegate 구현
 ```swift
