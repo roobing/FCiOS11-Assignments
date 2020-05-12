@@ -62,7 +62,33 @@
 - UISegmentedControl : 선택 내용이 바뀔 때마다 Label 의 내용도 해당 타이틀 값으로 함께 변경되도록 구현
   참고로, 위 2개는 버튼과 달리 event 처리를 touchUpInside 가 아니라 valueChanged 라는 것을 활용해야 함
 #### 결과
-
-<iframe width="806" height="473" src="https://www.youtube.com/embed/U4Ve6k_fRbw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-  
+<img src="iOS-assignment-Images/0424-iOS-assignment-UIGuide.gif"/>
+##### 주요내용
+* UISwitch 프로퍼티 이용
+```swift
+    @IBAction func onoffSwitch(_ sender: UISwitch) {
+        if sender.isOn {
+            onoffLabel.text = "ON"
+        }
+        else {
+            onoffLabel.text = "OFF"
+        }
+    }
+```
+* UISegmentedControl 프로퍼티 이용
+```swift
+    @IBAction func orderSegment(_ sender: UISegmentedControl) {
+        switch sender.selectedSegmentIndex {
+        case 0:
+            segLabel.text = "First"
+        case 1:
+            segLabel.text = "Second"
+        case 2:
+            segLabel.text = "Third"
+        default:
+            segLabel.text = "Error"
+        }
+    }
+```
+* UISegmentedControl에 Send events로 'Value Changed' 연결
+<img src="iOS-assignment-Images/0424-iOS-assignment-UIGuide.png"/>
