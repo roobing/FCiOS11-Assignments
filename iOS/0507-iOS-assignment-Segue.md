@@ -18,7 +18,7 @@ secondVC가 띄워질 때마다 숫자를 증가시키는데, firstVC에서 하�
   ```swift
   // 첫번째 뷰
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-      guard let secondVC = segue.destination as? SecondViewController else { return }
+      guard let secondVC = segue.destination as? SecondViewController else { return } // 인스턴스 생성
       
       switch segue.identifier {
       case "plusOneSeg":
@@ -35,9 +35,11 @@ secondVC가 띄워질 때마다 숫자를 증가시키는데, firstVC에서 하�
   
   override func viewDidLoad() {
       super.viewDidLoad()
-      countValueLabel.text = String(countValue)
+      countValueLabel.text = String(countValue) // 첫번째 뷰를 통해 전달 받은 값을 할당
   }
   ```
+
+
 
 * 두번째 뷰에서 데이터 가져오면서 전환하기
 
@@ -74,12 +76,15 @@ secondVC가 띄워질 때마다 숫자를 증가시키는데, firstVC에서 하�
   ```swift
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     // code...
-    if let picVC = segue.destination as? PictureViewController {
+    if let picVC = segue.destination as? PictureViewController { // 
       // code...
     }
     // code...
   }
   ```
+
+
+
 
 * UIImage 사용법
 
@@ -89,6 +94,9 @@ secondVC가 띄워질 때마다 숫자를 증가시키는데, firstVC에서 하�
   // 예시
   picVC.imageBox.image = UIImage(named: "dog")
   ```
+
+
+
 
 * 각 동물 라벨에 카운트를 올리는 방법에 UIViewController 메소드 이용
 
@@ -102,11 +110,17 @@ secondVC가 띄워질 때마다 숫자를 증가시키는데, firstVC에서 하�
   }
   ```
 
+
+
+
 * 세그웨이를 컨트롤 하는 UIViewController의 메소드
 
-  * performSegue
-  * prepare
-  * shouldPerformSegue
+  * performSegue : 내가 호출하는 메소드
+  * prepare: 뷰 전환 직전에 실행. 시스템에의해 호출되는 메소드
+  * shouldPerformSegue: prepare 메소드 실행 전에 실행. 시스템에의해 호출되는 메소드
+
+
+
 
 * 메뉴얼 세그웨이와 액션 세그 전환을 막는법 차이
 
@@ -150,9 +164,15 @@ secondVC가 띄워질 때마다 숫자를 증가시키는데, firstVC에서 하�
       }
   ```
 
+
+
+
 * 세그웨이 전환 막기 위한 메소드 호출 순서
 
   * shouldperformsegue -> prepare 임을 명심해야한다.
+
+
+
 
 * 이전 화면에서 데이터 전달 받아오는 법
 
